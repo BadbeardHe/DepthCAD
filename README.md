@@ -48,7 +48,7 @@ accelerate launch train.py \
 ```
 
 ### Inferencing
-Run the following command to inference a single scene 
+Run the following command to inference a single scene:
 ```
 python inference.py \
     --pretrained_model_name_or_path "/Path/to/Stable/Diffusion/model" \
