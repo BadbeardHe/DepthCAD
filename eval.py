@@ -55,7 +55,7 @@ def loss(pred, ideal):
     return result
 
 
-def eval(val_list_path, out_dir):
+def eval(val_list_path, pred_dir, out_dir):
     loss_mae = []
     loss_rel = []
     loss_del_1 = []
@@ -67,11 +67,10 @@ def eval(val_list_path, out_dir):
     idxs = [idx.strip() for idx in idxs]
 
     ideal_root = "/Path/to/Ideal/depth/path"
-    pred_root = f"{out_dir}/depth"    
 
     for idx in idxs:
         ideal = bin_loader(os.path.join(ideal_root, idx)) / 1e3
-        pred = np.load(f"{pred_root}/{idx}.npy")
+        pred = np.load(f"{pred_dir}/{idx}.npy")
         pred = np.nan_to_num(pred, 0)
 
         loss_list = loss(pred, ideal)
@@ -102,9 +101,11 @@ if __name__ == "__main__":
         type=str,
     )
     parser.add_argument("--out_dir", type=str, default=None)
+    parser.add_argument("--pred_dir", type=str, default=None)
     
     args = parser.parse_args()
     test_list_path = args.test_list_path
     out_dir = args.out_dir
+    pred_dir = args.pred_dir
 
     eval(test_list_path, out_dir=out_dir)

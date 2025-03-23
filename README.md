@@ -55,7 +55,7 @@ python inference.py \
     --depthcad_path "/Path/to/trained/DepthCAD/model" \
     --noise_IQ_file "/Path/to/noise/IQ/file" \
     --noise_depth_file "/Path/to/noise/depth/file" \
-    --out_file "/Path/to/output/depth"
+    --out_file "/Path/to/predicted/depth"
 ```
 
 ### Evaluation
@@ -63,5 +63,6 @@ Evaluate trained model using the command:
 ```
 python eval.py \
     --test_list_path "/Path/to/test/list" \
-    --out_dir "/Path/to/result/dir"
+    --out_dir "/Path/to/result/dir" \
+    --pred_dir "/Path/to/predicted/depth/dir"
 ```
