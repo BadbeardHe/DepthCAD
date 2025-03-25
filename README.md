@@ -66,3 +66,16 @@ python eval.py \
     --out_dir "/Path/to/result/dir" \
     --pred_dir "/Path/to/predicted/depth/dir"
 ```
+
+# References
+If you find this repository useful for your research, please cite the following work.
+```
+@inproceedings{he2025towards,
+  title={Towards Robust Time-of-Flight Depth Denoising with Confidence-Aware Diffusion Model},
+  author={He, Changyong and Zeng, Jin and Zhang, Jiawei and Guo, Jiajie},
+  booktitle={2025 IEEE International Conference on Multimedia and Expo (ICME)},
+  pages={1--6},
+  year={2025},
+  organization={IEEE}
+}
+```
